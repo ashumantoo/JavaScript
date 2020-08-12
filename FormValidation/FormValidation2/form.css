@@ -1,0 +1,26 @@
+body{
+  background-color: skyblue;
+}
+.container{
+  height: 320px ;
+  width: 430px;
+  margin-left: 450px;
+}
+.table{
+   margin-left: 40px  ;
+   margin-top: 15px;
+   border: 2px dotted green;
+   padding: 20px;
+   padding-bottom: 20px;
+   border-radius: 10px;
+}
+#h3{
+  color: green;
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 5px;
+}
+.form input{
+    color: green;
+    
+}

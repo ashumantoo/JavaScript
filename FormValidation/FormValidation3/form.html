@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="bootstrap.min.css" media="all"charset="utf-8">
+    <!-- <script type="text/javascript" src="bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="validation.js"></script>
+    <style>
+      form{
+        margin-top: 80px;
+      }
+      .warning_msg{
+        color: #ae0000;
+        margin: 3px 0px 0px 5px;
+      }
+      .warning_brd{
+        border: 1px solid #ae0000;
+      }
+    </style>
+  </head>
+  <body>
+     <div class="container">
+       <form class="form-horizontal">
+        <fieldset>
+          <legend>Registraion Form</legend>
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-6" id="name_div">
+              <input type="text" class="form-control" id="name" placeholder="Name" onblur="CheckEmpty('name'); ValidateName('name') ">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="col-lg-2 control-label">Username</label>
+            <div class="col-lg-6" id="username_div">
+              <input type="text" class="form-control" id="username" placeholder="Username" onblur="CheckEmpty('username')">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-6" id="email_div">
+              <input type="text" class="form-control" id="email" placeholder="Email" onblur="CheckEmpty('email');ValidateEmail('email')">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-6" id="password_div">
+              <input type="password" class="form-control" id="password" placeholder="Password" onblur="CheckEmpty('password','password_div');ValidatePassword('password','password_div')">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Confirm Password</label>
+            <div class="col-lg-6" id="cn_password_div">
+              <input type="password" class="form-control" id="Confirmpassword" placeholder="Confirm Password"
+              onblur="CheckEmpty('Confirmpassword');ValidateConfirmPass('password','Confirmpassword')">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Select</label>
+            <div class="col-lg-6" id="select_div">
+               <select class="form-control" name="select" id="select" onchange="ValidateSelect('select')">
+                 <option value="">Select Your Country</option>
+                 <option value="1">India</option>
+                 <option value="2">America</option>
+                 <option value="3">Japan</option>
+                 <option value="4">Shri Lanka</option>
+                 <option value="5">Australia</option>
+                 <option value="6">Enagland</option>
+                  <option value="7">Newzeland</option>
+               </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox" id="checkbox_div" >
+                <label for="checkbox">
+                  <input type="checkbox" id="checkbox" onchange="ValidateCheckbox('checkbox')">I Agree
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="button" class="btn btn-primary" name="name" id="submit" value="Sign In">
+            </div>
+          </div>
+        </fieldset>
+</form>
+     </div>
+  </body>
+</html>

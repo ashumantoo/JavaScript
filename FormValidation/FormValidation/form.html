@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Validation</title>
+    <script type="text/javascript" src="form.js"></script>
+    <link rel="stylesheet" href="form.css" type="text/css">
+</head>
+
+<body>
+    <h2>Fill out the form below and click "order now" to order</h2>
+
+    <form id="theForm" action="message.html" method="post" onsubmit="return validateTextbox();">
+
+        <div class="row">
+            <label for="name">Name:</label>
+            <input type="text" name="" id="name"></br>
+            </br>
+        </div>
+
+        <div class="row">
+            <label for="address">Address:</label>
+            <input type="text" name="" id="address"></br>
+            </br>
+        </div>
+
+        <div class="row">
+            <label for="phone">Phone:</label>
+            <input type="text" name="" id="phone"></br>
+            </br>
+        </div>
+
+        <div class="row">
+            <label for="email">Email:</label>
+            <input type="text" name="" id="email"></br>
+            </br>
+        </div>
+
+        <br>
+        <p id="errorMessage"></p>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

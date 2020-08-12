@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form.css" media="all">
+    <script src="validate.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3 id="h3">Fill out the form</h3>
+      <form class="form" action=" " method="post" onsubmit="return validate()">
+        <table class="table" align="center">
+          <tr>
+            <td>Full Name:</td>
+            <td colspan="5"><input type="text" id="name" name="name" value="" placeholder="Enter FullName"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" id="email" value="" placeholder="Enter Email"></td>
+          </tr>
+
+          <tr>
+            <td>Gender:</td>
+            <td><input type="radio" name="male" id="male" value="Male">Male</td>
+            <td><input type="radio" name="female" id="female" value="Female">Female</td>
+          </tr>
+
+          <tr>
+            <td>Age:</td>
+            <td><input type="number" id="age" name="age" value="" placeholder="Enter Age between 12 to 30"></td>
+          </tr>
+
+          <tr>
+            <td>Contact No:</td>
+            <td><input type="number" id="mobile" name="mobile" value="" placeholder="Enter Contact No"></td>
+          </tr>
+
+          <tr align="center">
+            <td colspan="5"><input type="submit" name="submit" value="Submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
