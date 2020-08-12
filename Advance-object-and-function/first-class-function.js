@@ -77,3 +77,18 @@ var sayGoodBye = applicator(speak, "Good Bye, see you!");
 sayGoodBye();
 
 // 3. during doing asynchronous call by callbacks
+function calculateAvg(arr,totalNo,callback){
+  console.log(arr,totalNo);
+  let sum =0;
+  for(let i = 0; i< arr.length; i++){
+    sum = sum + arr[i];
+  }
+  callback(sum,totalNo);
+}
+
+function avg(sum,count){
+  console.log(sum/count);
+  return sum/count;
+}
+
+calculateAvg([10,20,30,40,50],5,avg);
