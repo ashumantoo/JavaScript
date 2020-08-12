@@ -75,3 +75,5 @@ var sayHello = applicator(speak, "Hello");
 sayHello();                         // logs "Hello";
 var sayGoodBye = applicator(speak, "Good Bye, see you!");
 sayGoodBye();
+
+// 3. during doing asynchronous call by callbacks
