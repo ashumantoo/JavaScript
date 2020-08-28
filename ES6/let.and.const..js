@@ -38,12 +38,15 @@ driverLicence5(true);
 //ES6
 /*
  --let and const are not function scope but they are the block scope
-
  --whereas the var is the function scope they are accessible anywhere inside the function.
 */
 function driverLicence6(passedTest) {
+  /**
+   * In ES6 the variable defined with let , we can not used it before the declaration, as we can do by defining a variable with var keyword.
+   * Simply this is because in ES6 the variable defined with let get hoised but they are exist something called 'temporalzone'.
+   * the meaning of the temporaral zone is that we can not used that variable till we defined that.
+   */
     // console.log(firstName); this gives and error
-
     let firstName;
     const yearOfBirth = 1999;
     if (passedTest) {
