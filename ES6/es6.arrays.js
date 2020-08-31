@@ -15,8 +15,20 @@ boxesArr6.forEach(element => {
     element.style.backgroundColor = 'dodgerblue';
 });
 
-
-//Loops
+/**=====================================================================================
+ *                                      Loops
+ * 1. In 'map()' and 'forEach()' of javascript ES5 methods we can not use 'continue' 
+ *    and 'break' statement.
+ * 
+ * 2. To use 'break' and 'continue' statement in loop , we need to loop througn using
+ *    for loop only. then we will be able to use 'continue' and 'break'.
+ * 
+ * 3. But in ES6 we can use 'for of' loop to through the array in which we can use
+ *    'break' and 'continue' statement.
+ * 
+ * 4. The 'for of' loop is simply a combination of 'for' and 'forEach/map'. 
+ *
+ *======================================================================================/
 //ES5
 /*
 for (var i = 0; i < boxesArr5.length; i++) {
