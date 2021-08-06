@@ -26,6 +26,7 @@
   console.log(typeof johnOlder);
   console.log(typeof ageJohn);
   console.log(typeof 'its me');
+  console.log(typeof 1);
 
   var x;
   console.log(typeof x);
