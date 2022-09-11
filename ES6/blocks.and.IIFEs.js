@@ -13,8 +13,10 @@ console.log(c);
 //ES5
 (function () {
     var c = 3;
+    var d = 5;
 })();
 
 console.log(c);
+console.log(b);
 
 

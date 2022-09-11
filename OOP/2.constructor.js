@@ -15,5 +15,5 @@ function Book(title, author, year) {
 const book1 = new Book('Book one', 'Jone Doe', 2020);
 const book2 = new Book('Book Two', 'Johny Deep', 2018);
 
-// console.log(book1.getSummary());
-// console.log(book2);
+console.log(book1);
+console.log(book2);

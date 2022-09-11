@@ -13,7 +13,7 @@ function getRecipe() {
   }, 1500);
 }
 
-getRecipe();
+// getRecipe();
 
 
 
@@ -61,7 +61,7 @@ const getVideoDetails = (videoId, callback) => {
   }
 };
 
-const user = getUser('ashu@me.com', 12234, (user) => {
+getUser('ashu@me.com', 12234, (user) => {
   console.log(user);
   getUserVideos(user.email, (videos) => {
     console.log(videos);

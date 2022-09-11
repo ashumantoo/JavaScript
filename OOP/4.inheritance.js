@@ -16,14 +16,34 @@ function Magazine(title, author, year, month) {
     this.month = month;
 };
 
-//Inherit Prototype mehtod(it should always declared before object instance creating)
+//Inherit Book Prototype mehtods to Mangazine(it should always declared before object instance creating)
 Magazine.prototype = Object.create(Book.prototype);
+Magazine.prototype.getPublisher = function (publisher) {
+    return `${this.title} published by ${publisher}`;
+}
+
+function Novel(title, author, year, month, date, type) {
+    //inherit Magazine property to the Novel
+    Magazine.call(this, title, author, year, month);
+    this.date = date;
+    this.type = type;
+}
+
+Novel.prototype = Object.create(Magazine.prototype);
+Novel.prototype.getPublishedDate = function () {
+    return `Published date : ${this.date}-${this.month}-${this.year}`;
+}
 
 //Instantiate Mangzine Object
 const mag1 = new Magazine('Mag one', 'Jone doe', 2019, "Jan");
 
 //use Mangazine constructor
 Magazine.prototype.constructor = Magazine;
+// console.log(mag1);
+// console.log(mag1.getPublisher("Test"));
 
-console.log(mag1);
+Novel.prototype.constructor = Novel;
+const noval1 = new Novel("11 Minutes", "Paulo Cholelo", "2011", "March", "11", "Romantic/Drama");
+console.log(noval1)
+console.log(noval1.getPublishedDate())
 
