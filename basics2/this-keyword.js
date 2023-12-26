@@ -43,3 +43,43 @@ var mike = {
 
 mike.caluclateAge = john.caluclateAge;
 mike.caluclateAge();
+
+
+//-------------------------------------------------------------------------------------------------------------------
+function hello() {
+  console.log(this) //Global object
+}
+
+const newHello = () => {
+  console.log(this); //Global object
+}
+
+const person = {
+  fname: "Ashutosh",
+  lname: "Mantoo",
+  age: 30,
+  getName: function() {
+    //console.log("Name-------",this); //Person object
+    //Inner function
+    function sayHI() {
+      //This - Global object
+      console.log(`HI ...${this.fname} from normal function`)
+    }
+    
+    let sayHIArrow = () => {
+      //this - person object bcoz it is an arrow function and it's scope defined to the parent object
+      console.log(`Hi ....${this.fname} from arrow function`)
+    }
+    sayHI();
+    sayHIArrow();
+  },
+  getFullName: () => {
+    console.log("++++++++++", this); //Global object due to the lexical scoping and person object will be undefined here
+    console.log(this.fname)
+  }
+}
+
+// hello()
+// newHello();
+// person.getName();
+// person.getFullName();
