@@ -2,7 +2,7 @@
  *                      Variable scope in JS
  * --- var vs let vs const
  * --- Scope :- scope is a region of a program where a defined variable exists and can
- *              be regcognize beyond that they are not recognizse.
+ *              be regcognize, outside or beyond of that they are not recognize.
  * --- Javascript has 3 types of scope:
  *     1. Global scope
  *     2. Function scope
@@ -121,10 +121,10 @@ let firstCity; // Fine - no error
 
 
 
-/********************************************************************************
+/***********************************************************************************************************************************************************************
  *                                     HOISTING
  * --- Javascript execution context- When we try to execute a js code there are two phases
- *     1) Creattion Phase - In Creation phase 3 things happens
+ *     1) Creation Phase - In Creation phase 3 things happens
  *            a) It's creates the gloable/Window object
  *            b) Set a memory heap for storing the functions and variable references - That means it's takes
  *               all the functions and variables and stores it's inside the widnow/Global object
@@ -132,10 +132,11 @@ let firstCity; // Fine - no error
  *     2) Execution Phase - In this phase Javscript engine execute the code line by line,  and assign the values to the variables and exuecute
  *        the functions calls
  * 
- * --- HOISTING - So during the creation phase javascript engine moves variable and fucntion declration to the top of our code and this is called hoisting
+ * --- HOISTING - It is a machanism in which Javascript engine moves variable and fucntion declration to the top of their scope (Also called scope of their EXECUTION CONTEXT) 
+ *                and this happens during creation phase.
  * 
  * --- let and const variables are also hoisted, but they are not hoisted inside the globle object instead they are hoisted in a seperate state that
- *     called "Temporal Dead Zone"
+ *     called "Temporal Dead Zone
  * 
  * --- Temporal Dead Zone - It is a time between a variable decleration and initialization of let and const variables
  */
@@ -145,10 +146,10 @@ let count = 1;
 
 function abc() {
   console.log(_a, _b, _c); // _a=undefined, but we will get error for _b and _c ReferenceError: Cannot access '_b' before initialization
-  
+
   const _c = 30;
   let _b = 20;
-  var  _a = 10;
+  var _a = 10;
 }
 
 abc();

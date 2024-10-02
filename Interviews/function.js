@@ -122,7 +122,7 @@ multiply(...numbers); //here ... is spread operator
  */
 
 //if we want to use rest operator inside the params of a function then that params should be the last value
-//other we will get the error - rest parameter must be the last in the list parameters
+//otherwise we will get the error - rest parameter must be the last in the list parameters
 // function fn(a, b, ...numbers, c, d) {
 //   console.log(a, b);
 // }
