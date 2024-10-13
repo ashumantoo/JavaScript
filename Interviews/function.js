@@ -210,3 +210,26 @@ const obj = {
 
 console.log(obj.displayData());
 console.log(obj.displayData2());
+
+
+/***********************************************************************************************************
+ * 9. Pure Function : Pure function is a function which has two following characteristics
+ *    a) It minds it's own Business : It doesn't modify any variable or object which is exits before it was called.
+ *    b) Same input same output: Given the same input the pure function should always return the same output.
+ */
+
+//Pure function
+const addTwoNumbers = (a, b) => {
+  return a + b;
+}
+console.log(addTwoNumbers(10, 20));
+
+let taxPercent = 18;
+
+//Not Pure function since this function is changing a variable taxPercent which is defined outside of the function scope.
+const calculateTaxAmount = (amount) => {
+  taxPercent = taxPercent - 6; //12% <-- here 
+  const taxAmount = amount * taxPercent / 100;
+  return taxAmount;
+}
+
