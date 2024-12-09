@@ -1,4 +1,4 @@
-/****************************************************
+/**************************************************************************
  *                - HIGHER ORDER FUNCTION -
  * --> A function that returns a function is called Higher-Order function.
  * 

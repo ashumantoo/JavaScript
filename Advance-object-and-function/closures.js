@@ -7,7 +7,7 @@ of its outer functions, even after the outer function has returned.
 function retirement(retirementAge) {
   var a = ' years left until retirement.';
   return function (yearOfBirth) {
-    var age = 2019 - yearOfBirth;
+    var age = new Date().getFullYear() - yearOfBirth;
     console.log((retirementAge - age) + a);
   };
 }
@@ -15,7 +15,7 @@ function retirement(retirementAge) {
 var retirementIndia = retirement(65);
 retirementIndia(1993);
 
-//calling the returned function using the two paraenthesis this will work same as above
+//calling the returned function using the two parenthesis this will work same as above
 retirement(65)(1993);
 
 

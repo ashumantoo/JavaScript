@@ -14,6 +14,7 @@ function isPrime(n) {
   }
 }
 
+//Find all prime numbers till given number
 function primeNumber(n) {
   let primeNUmbers = [];
   for (let index = 1; index <= n; index++) {

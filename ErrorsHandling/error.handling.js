@@ -1,6 +1,9 @@
-/**================================================================================
+/**========================================================================================================
  *                          ERROR HANDLING IN JAVASCRIPT
- *================================================================================*/
+ * EXCEPTION - Is the unexpected condition that occurs during the runtime or during execution of a program.
+ * EXCEPTION HANDLING - Handling those unexpected condition of a program is known as EXCEPTION HANDLING OR 
+ *                      ERROR HANDLING.
+ *=========================================================================================================*/
 
 //The Error Object
 console.log("start");
@@ -12,8 +15,8 @@ console.log("finish");
 
 
 //Throwing and Handling Errors
-/* 1. Whern Errors gets thrown, then the script will stop executing,unless you 
- *    somehow hanlder it in your process by using try catch block
+/* 1. When Errors gets thrown, then the script will stop executing,unless you 
+ *    handle it in your process by using try catch block
  */
 
 const a = 5;

@@ -1,11 +1,11 @@
-/**========================================== Mutablity vs Immutability ===============================================
+/**========================================== Mutability vs Immutability ===============================================
  *  1. Immutable data types in javascript
  *       a. string
  *       b. number
  *       c. undefined
  *       d. null
  *       e. boolean
- *  2. Mutable data types in javascript(since all are referece type)
+ *  2. Mutable data types in javascript(since all are reference type)
  *       a. Objects
  *       b. Arrays
  *       c. function
@@ -19,8 +19,8 @@
 //Example of Immutability for Primitive data types - since here values are getting replaced not modifying
 let name = "Ashutosh Mantoo";
 let age = 28;
-let isMerried = true;
-console.log(name, "-", age, "-", isMerried);
+let isMarried = true;
+console.log(name, "-", age, "-", isMarried);
 name = new String("Ashu");
 
 
@@ -80,7 +80,7 @@ function giveAwesomePowersPureFunction(person) {
   // newPerson.specialPower = "invisibility";
 
   //making a copy of the passed object to the function and then 
-  // doing modifiction on that
+  // doing modification on that
   const newPerson = {
     ...person,
     specialPower: "invisibility"
@@ -116,14 +116,12 @@ console.log('Are they the same?', person2 === newPerson2); // false
  */
 const number = [1, 2, 3, 4, 5];
 
-//there are following 3 way to make a copy of the array
-
+//there are following 3 way to make a shallow copy of the array
 let numbercopy1 = [...number];
 let numbercopy2 = number.slice();
 let numbercopy3 = number.concat();
 
-//Now we can perform any operaton on copy of the array it will not effect the original array
-
+//Now we can perform any operation on copy of the array it will not effect the original array
 numbercopy1.push(6);
 
 console.log(number);
