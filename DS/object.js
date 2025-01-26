@@ -41,3 +41,21 @@ console.log(person['first_company']) // Bracket notations can be used to access 
 //Accessing the function from object
 person.getName();
 person.sayName();
+
+//Get all the keys of the an array
+console.log(Object.keys(person)); // ["name","age","first_company","getName",sayName]
+
+//Get all the values of the object
+console.log(Object.values(person)); // ["Jason",40,"Google", function definition, fun definition]
+
+
+//Get the key value pair of the array
+console.log(Object.entries(person));
+/**
+ * [
+ *  ["name":"Jason"],
+ *  ["age":40],
+ *  ["first_company","Google"],
+ *  ["getName":"funcion definition"]
+ * ]
+ */

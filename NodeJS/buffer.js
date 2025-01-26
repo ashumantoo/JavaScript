@@ -11,7 +11,7 @@
  * --> Buffer stores a sequence of integers.
  * --> We can not changes the size of the buffer once it is created.
  * 
- * --> Usecase 
+ * --> Use case 
  *     1) When we read from a file with fs.readFile() like files, pdfs,images etc, the data returned to the callback or Promise is a buffer object.
  *     2) When HTTP requests are made in Node.js, they return data streams that are temporarily stored in an internal 
  *        buffer when the client cannot process the stream all at once.

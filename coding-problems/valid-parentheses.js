@@ -38,8 +38,8 @@ function isValidParentheses(s) {
     //last two element from the stack array - open will be ( or { or [ and close will be ) or } or ];
     let open = stack[stack.length - 2];
     let close = stack[stack.length - 1];
-    let poentialValidParenthesis = open + close; // (), {} or [];
-    if (validParentheses.includes(poentialValidParenthesis)) {
+    let potentialValidParenthesis = open + close; // (), {} or [];
+    if (validParentheses.includes(potentialValidParenthesis)) {
       //if parenthesis is valid then remove from the stack array
       stack.pop();
       stack.pop();
@@ -49,4 +49,4 @@ function isValidParentheses(s) {
   return stack.length === 0;
 }
 
-console.log(isValidParentheses("()[[]]{}"));
+console.log(isValidParentheses("([])"));

@@ -1,11 +1,28 @@
 /**************************************************************************************
  *                              SET
- * --- In JS, SET is a data structure(it's an Object) that can hold a collection of UNIQUE values.
+ * --- In JS, SET is a data structure(it's an Object) that can hold a collection of UNIQUE values of any data type.
  * --- SET can contains a mix of different data types. We can store string,number, boolean and objects
  * --- SETs are dynamically sized. So we don't have to declare the size of the set before creating it.
  * --- SETs don't maintain the insertion order
- * --- SETs are iteraables, and can be loop through with for of loop
+ * --- SETs are iteraables, and can be loop through with for...of loop
  * --- To create a SET we can use the "set" constructor.
+ * 
+ * --- These are following inbuilt methods that can be used on SET
+ *     - size
+ *     - add()
+ *     - delete()
+ *     - clear()
+ *     - has()
+ *     - keys()
+ *     - values()
+ *     - entries()
+ *     - forEach()
+ *     - union()
+ *     - intersection()
+ *     - difference()
+ *     - isSubsetOf()
+ *     - isSupersetOf()
+ *     - Disjoint()
  * 
  *                          ARRAY vs SET
  * --- Arrays can contain duplicates values, wherase sets can not.
@@ -13,6 +30,9 @@
  * --- Searching and Deleting in the SET is faster than the array
  */
 
+const getFullName = (firstName, lastName) => {
+  return `${firstName} ${lastName}`;
+}
 
 const mySet = new Set();
 
@@ -22,6 +42,8 @@ mySet.add('Mango');
 mySet.add('Orange');
 mySet.add(false);
 mySet.add({ name: "ashuotsh", age: 30, isTeacher: false });
+mySet.add([5, 10, 15, 20]);
+mySet.add(getFullName);
 
 
 //In built methods
@@ -71,3 +93,16 @@ console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 console.log(unionSet);
 console.log(intersectionSet)
 console.log(differenceSet)
+
+
+const strs = [...mySet].filter((item) => typeof item === 'string');
+console.log("222222222-----", strs);
+
+
+console.log("Set Entries: ", mySet.entries());
+console.log("Set keys: ", mySet.keys());
+console.log("Set values: ", mySet.values());
+
+for (const element of mySet.values()) {
+  console.log("El;;;----",element);
+}

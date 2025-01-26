@@ -1799,3 +1799,22 @@ const result18 = [
    -- All the database operation requests(Read/Write) which are comming from the different users, are redirected or routed by the MongoDB router
       called mongos
 */
+
+//==================== 2nd Heighest salay in the table ===========================
+/*SQL
+ - Using subquery
+ SELECT MAX(salary) FROM employee
+ WHERE salary < (SELECT MAX(salary) FROM employee);
+
+ - Using limit and offset
+ SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 1 OFFSET 1;
+
+ - nth highest salary
+ SELECT name, salary FROM employee ORDER BY salary DESC LIMIT N-1,1;
+
+*/
+
+//NoSQL
+/* This will fetch 2 record of highest salary
+  db.employee.find({},{salary:1}).sort({salary:-1}).limit(2)
+*/
