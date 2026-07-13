@@ -135,6 +135,18 @@ getUserBooksData("john@gmail.com");
  * --- If the iterable contains non-promise values, they will be ignored, but still counted in the returned 
  *     promise array value (if the promise is fulfilled):
  * 
+ * 
+ *                                          Promise.allSettled()
+ * --- Takes an array of promise, Returns a single promise
+ * --- Promise.allSettled only return the value when all the promises are settled - either resolve or reject
+ * 
+ * 
+ *                                          Promise.any()
+ * --- Takes an array of promise, Returns a single promise
+ * --- returns the value as soon as any of the promise get resolved
+ * 
+ *                                          Promise.race()
+ * --- Promise.race() - resolved as soon as any of the promise gets settled either resolve or reject
  */
 Promise.all([getUserByEmailPromise('john@gmail.com'), getUserPurchasedBooksPromise(1)])
   .then((data) => {

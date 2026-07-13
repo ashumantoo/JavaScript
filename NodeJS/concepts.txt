@@ -1,0 +1,26 @@
+--> Thread & Process
+--> Process in NodeJS
+--> Clusters - Multiple NodeJS instances to use available cpu in the machine by crating separate process
+--> Child Process - similar to Clusting, separate process
+--> worker threads - Creating multiple threads inside a single process to handle the the cpu bound task
+--> Syncronous & Asyncronous coding
+--> blocking & Non blocking I/O
+--> I/O (Network calls, File calls and database calls)
+--> Event Loop 
+    Phases
+      - Timers Phase          -> setTimeOut and setIntervals
+      - Pending Phase         -> Runs the pending callbacks from prev tick
+      - Idle, Prepare Phase   -> internal to NodeJS
+      - Poll Phase            -> Heart of the event loop - New I/O, Runs almost all the JS callbacks
+      - Check Phase           -> setImmediate callbacks
+      - Close Callbacks Phase -> Close connection callbacks
+    * Priority from top to button
+    * Microtasks Phase: It has high Priority than the event Phases
+      - process.nextTick()
+      - Promise
+    * After every tick the microtask queue got drains completly  
+--> Event Emitter    
+--> repl
+--> process.argv
+--> Streams and Buffere
+ 

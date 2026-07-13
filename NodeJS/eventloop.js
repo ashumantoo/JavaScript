@@ -16,11 +16,23 @@
  *  9. Microtasks callbacks - (First nextTick, then Promise callbacks)
  * 
  * 
- * - Ideally event loop has mainly 4 phases
- * 1. Timers Callbacks
- * 2. I/O Callbacks
- * 3. Check Callbacks
- * 4. Close Callbacks
+ * - Ideally event loop has mainly 6 phases
+ *      1. Timers Phase         (Times Callbacks)   -> callback scheduled using setTimeout() and setInterval() 
+ *      2. Pending Phase        (Pending callbacks) -> Pending callback from prev tick
+ *      3. Idle Phase                               -> System level callbacks internal to nodejs/Libuv
+ *      4. Poll Phase (Handle I/O) 
+ *          -> Most critical one and Important one - mostly developers works in this phase
+ *          -> wait for the new events, all the I/O callback happens in this phase like file read & write, newtwork calls, and datbase calls
+ *      5. Check Phase (setImmediate callbacks)    -> setImmediate() callbacks will be executed here
+ *      6. Close Phase (Close callbacks)           -> clean up callbacks executed here
+ * 
+ * ### **********************IMPORTANT HIGH PRORITY MICRO TASKS******************************
+ * These micro tasks are not part of Event loop phase.
+ * 1. process.nextTick()
+ * 2. promise.resolve()
+ * 
+ * These two micro tasks callbacks alwasys gets called after completion of a phase and before 
+ * starting of the new phase
  * 
  * -------------------------NodeJS Runtime has following components-------------------------
  * 1. Call Stack - It is a stack data structure that stores the function calls in LIFO order.

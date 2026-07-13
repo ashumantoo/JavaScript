@@ -3,6 +3,10 @@
  * --> callback: callback is a function which is passed as an argument to another function, and then executed when
  *               the other function is finished.
  * --> We use callback to make sure that code is executed only after the asynchronous code gets completed. 
+ * 
+ *                                          Problem with the callbacks
+ * --> every callbacks add one level on nesting in the code. and if you add lots of callback the code starts looking
+ *     complicated and ugly. It will make a triangular shape called callback hell.
  */
 
 import request from 'request';

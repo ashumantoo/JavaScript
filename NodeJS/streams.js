@@ -19,6 +19,9 @@
  *        you can write compressed data and read decompressed data to and from a file
  * 
  * --> NOTE: Buffer is the memory space which is used to store the chunk of data while data is processing between source and destination.
+ * 
+ * --> There are lots of NodeJS module which has readable and writable inbuilt function to do the desire work for example file system (fs)
+ *     module has fs.createWriteStream() and fs.createReadStream()
  */
 
 

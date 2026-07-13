@@ -143,11 +143,11 @@ console.log("all Type Fruites ------", allTypeFruits);
 const vegetables = ['Potato', 'Tomato', 'Cabbage', 'Pumpkin', 'Brinjal', 'Garlic'];
 const greenVegetables = ['Cabbage', 'Califlower', 'Palak', 'Corrinder Leaves', 'Green Peas'];
 
-//Remove 0(Zero) element before index 2 and insert 'Beans';
+//Remove 0(Zero) element before index 2 and insert 'Beans' at index 2;
 const newVegetables = vegetables.splice(2, 0, 'Beans');
 console.log("6666666------", newVegetables, vegetables); // newVegetables = [], no element removed, vegetables = ['Potato','Tomato','Beans','Cabbage','Pumpkin', 'Brinjal','Garlic']
 
-//Remove 0 (zero) elements at last index, and insert "Raddish"
+//Remove 0 (zero) elements at last index, and insert "Raddish" at index vegetables.length
 const newVegetables1 = vegetables.splice(vegetables.length, 0, 'Raddish');
 console.log("777777-------", newVegetables1, vegetables); // newVegetables = [], no element removed, vegetables = ['Potato','Tomato','Beans','Cabbage','Pumpkin', 'Brinjal','Garlic','Raddish']
 
