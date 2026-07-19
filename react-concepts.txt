@@ -1,0 +1,324 @@
+/*
+                              IMPORTANT LINKS FROM REACT DOCUMENTATION
+
+     1. Rendering and commit: https://react.dev/learn/render-and-commit
+
+     2. Pure Component: https://react.dev/learn/keeping-components-pure
+
+     3. https://react.dev/learn/queueing-a-series-of-state-updates
+
+     4. https://react.dev/learn/updating-objects-in-state
+
+     5. https://react.dev/learn/updating-arrays-in-state
+
+     6. https://react.dev/learn/referencing-values-with-refs
+
+     7. https://react.dev/learn/manipulating-the-dom-with-refs
+
+     8. https://react.dev/learn/reusing-logic-with-custom-hooks
+
+     9. https://react.dev/reference/react/Suspense
+
+     10. https://react.dev/reference/react/lazy
+
+     11. https://react.dev/reference/react-dom/createPortal
+*/
+
+
+
+/********************************************************************************************
+                               PURE COMPONENT
+ ********************************************************************************************                              
+  -> Keeping the component pure : https://react.dev/learn/keeping-components-pure
+
+  -> Pure function : 
+      - It does not change any objects or variables that existed before it was called.
+      - A function which always return the same output with same input.
+
+  -> Pure Compoenent: 
+      - React assumes that every component you write is a pure function. This means that React components 
+        you write must always return the same JSX given the same inputs:
+
+      - A component should access outer variables or values through props only.
+
+      - Props, state and context always should be treated as read-only. If you want to mutate the state or Props
+        it should be done using set only.
+
+      - it’s completely fine to change variables and objects that you’ve just created while rendering.   
+
+      - React offers a “Strict Mode” in which it calls each component’s function twice during development. 
+        By calling the component functions twice, Strict Mode helps find components that break these rules.
+
+  -> SIDE EFFECTS:
+      - Side Effects, are the things that happens outside the render.
+
+      - Side effects usually belong inside event handlers
+
+      - Event handlers or useEffect don’t need to be pure. Because they happens outside the render.
+
+  -> Why does React care about purity? - Performance Optimization
+
+
+  -> PURE COMPONENT CAN BE CREATED USING React.memo in function based component and in class based component needs
+                                         to extend react.PureComponent                               
+*/
+
+
+
+/**************************************************************************************************
+                                     HOC (Higher Order Compoenent)
+***************************************************************************************************
+  -> This is a pattern in react where a component takes a component as an argument and returns a 
+     enhanced version of the component.
+
+  -> HOC is not part of the native react api rather a functional programming technique.
+
+  -> This is becoming lagacy now days. Instead of HOC now most people prefere creating a custom hook  .
+     but in some cases HOC is still best option e.g. Check role base access control 
+/
+
+
+/**************************************************************************************************
+                                    CONTROLLED AND UNCONTROLLED INPUT 
+***************************************************************************************************
+-> CONTROLLED INPUT
+  * REACT WAY form handling
+  * This component is a controlled input form because here the state and the change event 
+  * is completely handled by the react using the useState hook and onChange event handle
+
+
+-> CONTROLLED INPUT
+  * TRADITIONAL WAY FORM HANDLING
+  * This component is an uncontrolled input form because here the form value is handled by the DOM instead of react.
+  * We can also use useRef to get the element node of the DOM element and get the value of the from
+/
+
+
+
+/*******************************************************************************************************************
+                                    STATE BATCHING
+********************************************************************************************************************
+ -> State batching is a performance optimization feature in React where multiple state updates are grouped into a 
+    single re-render, instead of causing a separate re-render for every individual update
+
+ -> This prevents the browser from unnecessarily recalculating layouts and repainting the screen, keeping your 
+    application fast and responsive.
+
+/
+
+/*******************************************************************************************************************
+                                    LIFTING STATE UP
+********************************************************************************************************************
+ -> Lifting state up is a foundational pattern in React where you move a piece of state from child components to 
+    their closest common ancestoR.
+
+ -> In React, data flows downward (unidirectional data flow). If two or more independent child components need 
+    to share the same changing data, or need to stay synchronized with one another, you must lift that state up to 
+    their shared parent component.
+/
+
+
+
+/*******************************************************************************************************************
+                                    EVENT BINDING, BUBBLING AND CAPTURING
+********************************************************************************************************************
+ -> Event binding connects an HTML element to a JavaScript function. When an event (like a click) fires, JavaScript 
+    manages propagation through three phases: 
+    - Capturing (trickles down from the root), 
+    - Target (reaches the clicked element), 
+    - Bubbling (bubbles back up to the root)
+
+  -> Event Bubbling (Bottom-Up): The event triggers on the innermost target element first, then bubbles up through 
+                                 its ancestors. By default, addEventListener binds to this phase.
+
+  -> Event Capturing (Top-Down): The event starts at the root (window or document) and trickles down through the 
+                                 DOM tree to the target element. Handlers bound in this phase execute before the 
+                                 target is reached.                                
+/
+
+
+/*******************************************************************************************************************
+                                    preventDefault() and stopPropagation()
+********************************************************************************************************************
+ -> event.preventDefault(): 
+      - It stops Browser's default behavior (e.g., refreshing, navigating).       
+      - It does not have impact on Propagation The event still bubbles up and captures down the DOM.       
+
+ -> event.stopPropagation():
+      - It stops the Event to travel through the DOM tree.
+      - It Stops the event from hitting parent elements, but allows the default browser behavior.                      
+/
+
+
+/*******************************************************************************************************************
+                            COMPONENT LIFECYCLE METHODS (class based vs functional based)
+********************************************************************************************************************
+ -> React component has 3 main phases:
+      - Mounting : Insertion into the DOM
+      - Updating : Re-rendering due to props and state changes
+      - Unmounting : Removal from the DOM
+
+ -> Class components manage these phases using explicit, individual lifecycle methods, while functional components 
+    handle them cohesively using the useEffect hook.
+
+ -> CLASS BASED LIFECYCLE METHODS
+
+    Phase                                  Method                                    Purpose 
+
+  Mounting                             constructor()                   Initialise the state and bind the event handlers     
+
+                                      componentDidMount()              Runs once after the component enters the DOM. 
+                                                                       Used for API calls, timers, or DOM setup. 
+
+
+  Updating                           shouldComponentUpdate()           Performance optimization. Returns a boolean to decide 
+                                                                       if a re-render is required or not.
+
+                                     componentDidUpdate(               Runs immediately after a re-render happens.
+                                      prevProps, 
+                                      prevState
+                                    )          
+
+  Unmounting                        componentWillUnmount()             Runs right before the component is destroyed. Used for 
+                                                                       cleanup (clearing intervals, removing event listeners).     
+
+ *** Note: Every phase requires the mandatory render() method to return the JSX.
+
+
+ -> FUNCTIONAL COMPONENT LIFECYCLE:
+    - Functional components do not have lifecycle methods. Instead, they use the useEffect hook to replicate all lifecycle 
+      behaviors based on a dependency array (the second argument).
+
+    - useEffect with empty dependency array : componentDidMount
+    - useEffect with element inside the dependency array : componentDidUpdate
+    - useEffect with returned clearn up function : componentWillUnmount   
+/
+
+
+/*******************************************************************************************************************
+                                            PERFORMANCE OPTIMIZATION
+********************************************************************************************************************
+ 1. Preventing Unnecessary Re-renders
+      - React.memo (Components): Wraps a functional component to prevent a re-render unless its props change.
+
+      - useCallback (Functions): Caches a function definition between renders. Passing an inline function to a memoized 
+        child breaks React.memo because functions are recreated on every render (changing their reference).
+
+      - useMemo (Values): Caches the result of an expensive calculation so it doesn't recalculate unless dependencies change.
+
+ 2. State Management Optimization
+      - Move state as close to where it is used as possible.
+
+ 3. Code Splitting and Lazy Loading 
+      - Code Splitting: Load the code only when user need it. Code Splitting can be done using Route-Based Splitting or Compoenent based Splitting
+
+      - React.lazy and Suspense: Split your components (like routes or heavy modals) into separate chunks.
+
+      - React.lazy: lets you defer loading component’s code until it is rendered for the first time.
+
+      - Suspense: lets you display a fallback until its children have finished loading.
+
+  4. Render the list efficiently    
+      - Pass key props
+
+
+ *** Note: Avoid over-splitting: Splitting tiny 2KB components creates unnecessary network requests. 
+           Target chunks or routes that pull in heavy third-party dependencies     
+/
+
+
+/*******************************************************************************************************************
+                                               FORWARDING REFS
+********************************************************************************************************************
+ -> In React 19 and later, forwardRef is deprecated and no longer necessary because you can pass ref as a regular prop. 
+    However, if you are working in React 18 or earlier, forwardRef is the utility used to pass a ref through a component 
+    down to a lower DOM element.      
+
+ -> Legacy React (React 18 and Earlier): 
+     - In older versions of React, functional components were not allowed to receive a ref prop automatically. 
+       Attempting to do so threw an explicit console error.
+
+     - To fix this, you had to wrap the component in forwardRef(). The higher-order function exposes the ref as a 
+       standalone second argument right after the props.              
+/
+
+
+
+/*******************************************************************************************************************
+                                              React Security
+********************************************************************************************************************
+ -> XSS Prevention : Cross site scripting, mostly handled by the react itself by escaping the html content securly
+                     but you can also use the DOMPurify library.
+ -> dangerouslySetInnerHTML: 
+ -> CSRF Awareness: Cross Site Request Forgery, Server should always some kind of token varification to verify if
+                    the post, put and delete request is coming from the correct client or not.
+ -> Secure Authentication
+ -> Secure Token Storage         
+/
+
+
+/*******************************************************************************************************************
+                                              CSR, SSR, SSG, ISR
+********************************************************************************************************************
+There are 3 phase for any web app : Build, Server, Client
+
+ -> CSR: Client Side Rendering
+    - all the html pages renders on the client Side
+    - Client side load time is higher the Server
+
+ -> SSR: Server Side Rendering
+    - all the html pages generated by server on client request, new page for each request
+    - server load time is more than the client   
+
+ -> SSG: Static Site Generation
+    - all the html pages are generated at the build time itself. all the pages means all the pages. and then the 
+      pages are send to client on request.
+    - Build time is quite high in this approach, but server and client load time is very very low.  
+    - But the problem is every time a new content or a dynamic content is added inside the code we need to build
+      the app again and again. and the build will happens for all the pages again. 
+    - Over the time this approach may take quite a huge time to build the application
+
+ -> ISR: Incremental Static Generation
+    - all the html pages are generated at the build time itself. all the pages means all the pages. and then the 
+      pages are send to client on request.
+    - Build time is quite high in this approach, but server and client load time is very very low.
+    - But for dynamic content we don't have to build the whole app again and again, Build will only happen for the 
+      newer pages.
+    - We can also schedule how often and at which time we want to build the app again.     
+/
+
+
+/*******************************************************************************************************************
+                                              HYDRATION IN REACT
+********************************************************************************************************************
+ -> In React, hydration is the process where client-side JavaScript transforms static HTML (generated on the server) 
+    into an interactive, functional web page.
+ 
+ -> When using Server-Side Rendering (SSR) or Static Site Generation (SSG), the server sends a pre-rendered, 
+    non-interactive visual preview to the browser. Hydration is the crucial bridge that "waters" this dry HTML 
+    with event listeners, state trackers, and reactive logic
+
+
+ -> The 4-Step Hydration Pipeline
+    - To understand how hydration works, look at the timeline from the server to the user's screen:
+    
+    1. Server Rendering: The server renders your React components into a raw HTML string and transmits it to the browser.
+    2. Fast Visual Load: The browser receives this HTML and instantly displays the visual interface. The page looks complete, 
+       but buttons do not work yet.
+    3. Download JavaScript: The browser downloads the bundled JavaScript application file in the background.
+    4. Hydration Execution: React scans the existing DOM, matches it with the downloaded component logic, and attaches event 
+       listeners (like onClick) directly to the HTML tags without re-rendering the page from scratch.   
+/
+
+
+/*******************************************************************************************************************
+                                    Reconciliation Algorithm and Diffing Algorithm
+********************************************************************************************************************
+ -> The Reconciliation Algorithm (often referred to as the Virtual DOM diffing algorithm) is React’s internal process 
+    for updating the user interface.
+ 
+ -> Instead of rewriting the entire browser DOM every time a state changes—which is incredibly slow—React creates a 
+    lightweight copy of the UI in memory (the Virtual DOM), compares it with the previous version, and calculates 
+    the minimum number of changes needed to update the real DOM.
+
+/

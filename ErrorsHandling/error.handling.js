@@ -3,6 +3,13 @@
  * EXCEPTION - Is the unexpected condition that occurs during the runtime or during execution of a program.
  * EXCEPTION HANDLING - Handling those unexpected condition of a program is known as EXCEPTION HANDLING OR 
  *                      ERROR HANDLING.
+ * 
+ * TYPES OF ERRORS
+ *    1. Syntax Error
+ *    2. Reference Error
+ *    3. Type Error
+ *    4. Range Error
+ *    5. Eval Error
  *=========================================================================================================*/
 
 //The Error Object

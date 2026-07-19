@@ -20,12 +20,13 @@ function first() {
 */
 
 /*=============================== DIFFERENCE BETWEEN VAR,LET AND CONST =======================================
- *        KEYWORD               SCOPE             HOISTING          CAN BE ASSIGNED         CAN BE REDECLARED
- *         Var               Function Scope        Yes                 Yes                     Yes
- *         Let               Block Scope           NO                  Yes                     No
- *         Const             Block Scope           NO                  NO                      NO
+ *        KEYWORD               SCOPE             HOISTING      INITIAL VALUE      CAN BE ASSIGNED         CAN BE REDECLARED
+ *         Var               Function Scope        Yes             Undefined            Yes                     Yes
+ *         Let               Block Scope           Yes             None(TDZ)            Yes                     No
+ *         Const             Block Scope           Yes             None(TDZ)            NO                      NO
  *============================================================================================================*/
 
+// TDZ : The Temporal Dead Zone (TDZ)
 // Example to show the difference between execution stack and scope chain
 
 var a = 'Hello';

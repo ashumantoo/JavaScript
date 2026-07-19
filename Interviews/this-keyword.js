@@ -66,8 +66,9 @@ const employee = {
     return `Salary of ${this.name} is : ${this.salary}`; // this.name = Ajay Sharma and this.salary = 150000
   },
   getSalaryArrow: () => {
-    //this = parent function object = parent function getSalayArrow() and this for function = global object
+
     const anotherArrowFn = () => {
+      //this = parent function object = parent function getSalayArrow() and this for function = global object
       console.log("Another arrow fn: ", this.age);
     }
     anotherArrowFn();
@@ -81,7 +82,7 @@ const employee = {
       return `Salary of ${this.name} is : ${this.salary}`; // this.name and this.salary = undefined
     },
     getSalaryArrow: () => {
-      //this = parent function object = parent function is Global execution context  = global object
+      //this = parent function object = employee object
       return `Salary of ${this.name} is : ${this.salary}`; // this.name = Ajay Sharma and this.salary = 150000
     }
   },
@@ -139,7 +140,7 @@ function makeUser() {
 }
 
 const user1 = makeUser();
-// what will be the output - undefined because here we are calling makeUser(), which is point to the global object
+// what will be the output - undefined because here we are calling makeUser(), which is pointing to the global object
 console.log(user1.ref.name);
 
 

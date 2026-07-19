@@ -231,3 +231,21 @@ for (const [index, element] of a.entries()) {
 // 0 'a'
 // 1 'b'
 // 2 'c'
+
+const address = {
+  "address1": "13th Main Road",
+  "city": "Noida",
+  "state": "UP",
+  "country": "India",
+  "pincode": "201306"
+}
+
+//WRONG WAY:
+// for (const [key,value] of address.entries()){
+//   console.log(key,value)
+// }
+
+//CORRECT WAY
+for (const [key,value] of Object.entries(address)){
+  console.log(key,value)
+}
